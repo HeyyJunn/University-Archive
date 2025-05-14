@@ -1,0 +1,16 @@
+# 과제 폴더 무시
+**/git-private/
+
+# 문서 파일 무시
+*.xlsx
+*.xls
+*.csv
+*.pdf
+*.hwp
+*.hwpx
+*.hwt
+*.doc
+*.docx
+*.txt
+*.zip
+*.pptx

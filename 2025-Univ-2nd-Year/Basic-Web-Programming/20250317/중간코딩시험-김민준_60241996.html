@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://127.0.0.1:5500/Mid_Coding-student/pilatesClass.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>중간코딩시험-김민준/60241996</title>
+  
+<link rel="stylesheet" href="./중간코딩시험-김민준_60241996_files/pilatesClass.css"></head>
+
+<body>
+  <h1>Weekly Pilates Class Schedule</h1>
+
+  <!-- 1. 필라테스 클래스 시간표 작성 -->
+  <!-- 클래스 이름들: -->
+  <!-- Intro Reformer Pilates, Mat Pilates, Reformer Flow, Cardio Sculpt, Pilates Stretch & Recovery, 1:1 Private Session -->
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>Sunday</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+      </tr>
+    </thead>
+      <tbody><tr>
+        <th>07:00</th>
+        <td>Mat pilates</td>
+        <td rowspan="2">1:1 Private Session</td>
+        <td>Reformer Flow</td>
+        <td rowspan="2">a</td>
+        <td>Cardio Sculpt</td>
+        <td>Matpilates</td>
+      </tr>
+
+      <tr>
+        <th>08:00</th>
+        <td>Reformer Flow</td>
+        <td>Cardio Sculpt</td>
+        <td>Mat Pilates</td>
+        <td>Reformer flow</td>
+      </tr>
+
+      <tr>
+        <th>09L00</th>
+        <td>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+        <td>f</td>
+        <td>e</td>
+      </tr>
+    </tbody><tbody>
+
+      
+    </tbody>
+  </table>
+
+  <!-- 2. 필라테스 클래스 설명 -->
+  <!-- 4열의 그리드 형태로 출력. 
+      웹 브라우저 너비가 줄어들면 1열로 변환  -->
+  <div class="class-descriptions">
+    <h2>Class Descriptions</h2>
+  
+    <div class="class-box intro-reformer">
+      <strong>Intro Reformer Pilates:</strong>
+      An introductory class focusing on the core principles of Pilates and familiarization with the Reformer apparatus. Suitable for beginners with no prior experience.
+    </div>
+  
+    <div class="class-box mat-pilates">
+      <strong>Mat Pilates</strong>
+      A floor-based class emphasizing core strength, flexibility, and body awareness using minimal equipment.
+    </div>
+  
+    <div class="class-box reformer-flow">
+      <strong>Reformer Flow</strong>
+      A dynamic session utilizing the Reformer to enhance strength, coordination, and balance through continuous movement sequences.
+    </div>
+  
+    <div class="class-box cardio-sculpt">
+      <strong>Cardio Sculpt</strong>
+      Combines Pilates principles with cardiovascular exercises to elevate heart rate while toning the entire body.
+    </div>
+  
+    <div class="class-box pilates-stretch">
+      <strong>Pilates Stretch &amp; Recovery</strong>
+      Focuses on gentle stretching and mobility exercises to aid recovery and improve flexibility.
+    </div>
+  
+    <div class="class-box private-session">
+      <strong>1:1 Private Session:</strong>
+      Personalized Pilates sessions tailored to individual goals and needs.
+    </div>
+  </div>
+
+  <!-- 3. 필라테스 클래스 등록 -->
+  <!-- 요일 선택, 시간 선택, 클래스 선택, 등록 기간 선택, 등록  -->
+  <div class="form-section">
+    <h2>Register for a Class</h2>
+    <form>
+ 
+ 
+    </form>
+  </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>

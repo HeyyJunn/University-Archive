@@ -193,8 +193,6 @@ names(res) <- no_of_iterations
 # 결과 출력
 res
 
-
-
 ##################################################
 
 
@@ -230,29 +228,60 @@ names(res) <- no_of_iterations
 res
 
 
-#####
-
+##################################################
 
 # 분포 적합을 위한 패키지 설치 및 로드
-install.packages("propagate")
 library("propagate")
+# 표본의 분포를 여러가지 타입의 분포에 적합시킨 후 
+# 가장 적절한 분포를 고를 수 있도록 지원
+
+# firstDistr()
+#   - 데이터를 다양한 분포에 적합 시켜 봄
 
 # 시드 고정 및 데이터 생성 (평균 5인 정규분포 데이터 10,000개)
+# 무작위 결과의 “재현성”을 보장하기 위해 난수 생성기의 시작값(seed)을 고정
 set.seed(275)
 observations = rnorm(10000, 5)
 
+# fitDistr() 함수는 여러 종류의 확률분포(Normal, t, Skewed, Logistic 등)
+# 에 대해 주어진 데이터가 얼마나 잘 맞는지를 자동으로 평가함.
+# 결과로 distTested 객체가 만들어지고, 여기에 분석 결과가 저장됨
 distTested = fitDistr(observations)
 
+# 이 표는 fitDistr()의 결과 객체에서 다음 명령어로 출력한 것:
 distTested$stat
 
+##################################################
 
-#####
+# 실습1 : 데이터 형태 분석 & 확률밀도 함수
+
 employee = read.csv("employees_ex.csv")
-hist(employee$incentive[employee$year == 2007], breaks = 50)
-hist(employee$incentive[employee$year == 2008], breaks = 50)
-hist(employee$incentive[employee$gender == "F"], breaks = 50)
-hist(employee$incentive[employee$gender == "M"], breaks = 50)
-hist(employee$incentive[employee$negotiated == FALSE], breaks = 50)
-hist(employee$incentive[employee$negotiated == TRUE], breaks = 50)
+str(employee)
+# incentive : 인센티브 금액 (보너스 성격의 추가 급여)
+# salary : 기본급 또는 총연봉 (연봉 단위로 보임)
+# negotiated : 협상 여부 (연봉을 직접 협상했는지 여부)
 
+hist(employee$incentive[employee$year == 2007], breaks = 100)
+hist(employee$incentive[employee$year == 2008], breaks = 100)
+hist(employee$incentive[employee$gender == "F"], breaks = 100)
+hist(employee$incentive[employee$gender == "M"], breaks = 100)
+hist(employee$incentive[employee$negotiated == FALSE], breaks = 100)
+hist(employee$incentive[employee$negotiated == TRUE], breaks = 100)
+# 협상을 안한 쪽의 max 25까지도 나옴
+# 협상 여부가 하나의 분포로도 설명이 될 수 있을까에 관한 ..
+
+library(propagate)
+# Johnson SU distribution, BIC -925.653
+distTested = fitDistr(employee$incentive)
+distTested$stat
+# distTested = fitDistr(employee$salary)
+# distTested$stat
+distTested = fitDistr(employee$incentive[employee$negotiated == FALSE])
+distTested$stat
+distTested = fitDistr(employee$incentive[employee$negotiated == TRUE])
+distTested$stat
+
+# 5 / 7
+
+#  총 1309명에 대한 데이터
 

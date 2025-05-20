@@ -84,3 +84,4 @@ Car_table_4
 
 # add margins to the table
 addmargins(car_table4)
+

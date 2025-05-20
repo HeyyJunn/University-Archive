@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const text = document.querySelector('h1');
+      const incB = document.querySelector("#inc");
+      const decB = document.querySelector("#dec");
+      let counter = 0;
+
+      incB.addEventListener('click', () => {
+        counter++;
+        text.textContent = counter;
+      });
+
+      decB.addEventListener('click', () => {
+        counter--;
+        text.textContent = counter;
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <h1>0</h1>
+    <button id="inc">Increase</button>
+    <button id="dec">Decrease</button>
+  </div>
+</body>
+</html>

@@ -281,7 +281,3 @@ distTested$stat
 distTested = fitDistr(employee$incentive[employee$negotiated == TRUE])
 distTested$stat
 
-# 5 / 7
-
-#  총 1309명에 대한 데이터
-

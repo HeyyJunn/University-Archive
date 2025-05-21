@@ -1,6 +1,5 @@
-# AIzaSyAFw3210sFaygVU_4ktse1_k2dja8nU1kk
 library(ggmap)
-register_google(key = "AIzaSyAFw3210sFaygVU_4ktse1_k2dja8nU1kk")
+register_google(key = "")
 map <- get_googlemap(center = c(126.975684, 37.572752))
 ggmap(map)
 

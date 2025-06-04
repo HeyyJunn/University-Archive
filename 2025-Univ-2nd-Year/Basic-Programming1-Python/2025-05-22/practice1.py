@@ -12,14 +12,11 @@ def getAverage(vect):
     return avg
 
 
-# main
-
-
 try:
-    myList = [10,20,30,40,50,"sss"]
+    myList = [100, 20, 43, 57, 12, 66, 77]
     # myList = [10,20,30,40,50,"sss"]
-    print("Input: {}".format(myList))
+    print(f"Input: {myList}")
     avg = getAverage(myList)
-    print("Average result is {}".format(avg))
+    print(f"Average result is {avg}")
 except ValueError as errorMsg:
     print(errorMsg)

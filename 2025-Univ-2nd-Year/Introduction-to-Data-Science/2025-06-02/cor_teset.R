@@ -67,3 +67,11 @@ corrplot(airquality_cor,
 # 상관관계 분석 -> 상관관계가 있다 없다 이지
 #                 어떤게 원인이다 결과이다를 알려주진 못함
 
+
+Y = airquality[,"Ozone"]
+X = airquality[,"Solar.R"]
+model1 = lm(Y ~ X)
+model1
+plot(Y ~ X)
+abline(model1, col = "blue", lwd = 3)
+

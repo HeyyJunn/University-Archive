@@ -1,7 +1,6 @@
 data(cars)
 full = lm (dist ~ speed, data = cars)
 summary(m)
-
 reg = read.csv("regression.csv", fileEncoding = "euc-kr")
 # 상관관계가 크다 -> 회귀모델 생성
 head(reg)
@@ -20,8 +19,6 @@ summary(r)
 # 20 정도 더 큰 값으로 책정된 값도 있고 13 정도 작게 예측된 값도 있고
 # 대개의 경우에는 0 정도의 중앙값
 plot(r)
-
-
 
 data("airquality")
 str(airquality)
@@ -43,6 +40,7 @@ for (i in 1:nrow(airquality)){
   }
 }
 head(airquality)
+
 # na 가 있어서 해당 month 의 평균값으로
 # 정규화
 normalize <- function(x){
@@ -68,4 +66,8 @@ model1
 plot(Y ~ X)
 abline(model1, col = "blue", lwd = 3)
 
-#
+model1 = lm(airquality$Ozone ~ airquality$Wind)
+summary(model1)
+model2 = lm(airquality$Ozone ~ airquality$Temp)
+model2
+summary(model2)
